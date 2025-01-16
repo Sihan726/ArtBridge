@@ -84,7 +84,8 @@ const Header = () => {
                     <a onClick={() => navigateWithLoading("/artworkMarket")} >市集</a>
                     <Link href="">交流版</Link>
                     <a onClick={()=>navigateWithLoading("/artworkShowcaseLobby")}>展示大廳</a>
-                    <Link href="" >委託大廳</Link>
+                    <a onClick={()=>navigateWithLoading("/artworkEntrustLobby")}>委託大廳</a>
+
                 </div>
                 <div className="header-auth-buttons">
                     <CustomButton title="註冊" className={styles.headerBtn} onClick={handleUserRegister} />

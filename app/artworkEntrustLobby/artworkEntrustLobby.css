@@ -1,0 +1,86 @@
+.artworkEntrustLobbyPage{
+  
+    /*max width*/
+    --artworkEntrustLobbyPage-width: 1440px;
+
+    /*gap*/
+    --artworkEntrustLobby-button-container-min-gap: 80px;
+    --artworkEntrustCard-container-gap: 60px;
+
+    /*margin-bottom*/
+    --artworkEntrustLobby-button-container-margin-bottom:88px;
+    --artworkEntrustCard-container-gap: 60px;
+}
+
+.artworkEntrustLobbyPage{
+    
+    width:100%;
+    max-width:var(--artworkEntrustLobbyPage-width);
+    padding: 110px 88px 50px 88px; /* top right bottom left */
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    margin:0 auto; 
+    
+}
+
+.artworkEntrustLobby-button-container{
+    width:100%;
+    display:flex;
+    gap:var(--artworkEntrustLobby-button-container-gap);
+    padding: 0px 190px;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom:var(--artworkEntrustLobby-button-container-margin-bottom);
+    flex-wrap: wrap; /* 允許按鈕自動換行 */
+}
+
+/*RWD*/
+@media screen and (max-width:1280px){
+    .artworkEntrustLobbyPage{
+        padding: 110px 40px 40px 40px; /* 調整內邊距以適應較小螢幕 */
+    }
+
+    .artworkEntrustLobby-button-container{
+        padding: 0 40px; /* 減少左右內縮以適配寬度 */
+        gap: 40px; /* 自動調整按鈕間距以適應屏幕 */
+    }
+}
+
+
+@media screen and (max-width:834px){
+    .artworkEntrustLobbyPage{
+        padding:110px 50px 50px 50px;
+    }
+
+    .artworkEntrustLobby-button-container {
+        flex-wrap: wrap; /* 允許按鈕換行 */
+        gap: 20px; /* 按鈕之間的間距調整 */
+        justify-content: center; /* 保持按鈕在中間 */
+        padding: 0 16px; /* 減少內縮 */
+    }
+    .artworkEntrustLobby-button-container button {
+        flex: 1 1 calc(33.33% - 20px); /* 每排3個按鈕，間距為20px */
+        max-width: 180px; /* 限制按鈕寬度以防過大 */
+    }
+
+}
+
+
+@media screen and (max-width:768px){
+    .artworkEntrustLobbyPage{
+        padding: 110px 20px 20px 20px; /* 進一步縮小內邊距 */
+    }
+    .artworkEntrustLobby-button-container {
+        flex-wrap: wrap;
+        gap: 30px; /* 減少按鈕間距以適應小屏幕 */
+        justify-content: center;
+        padding: 0 12px; /* 再次減少內縮 */
+    }
+
+    .artworkEntrustLobby-button-container button {
+        flex: 1 1 calc(33.33% - 16px); /* 同樣每排3個按鈕 */
+        max-width: 160px; /* 確保按鈕不過大 */
+    }
+}
