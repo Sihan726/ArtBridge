@@ -19,9 +19,9 @@ const artworkEntrustLobby = () => {
     });
    
     const [currentPage, setCurrentPage] = useState(1); // 目前頁數
-    const ITEMSPERPAGE = 8; // 每頁顯示的商品數量
+    const [itemsPerPage, setItemsPerPage] = useState(8); //設定預設顯示的商品數量
     const totalItems = 135; // 商品總數（可以從API獲取）
-    const totalPages = Math.ceil(totalItems / ITEMSPERPAGE); // 總頁數
+    const totalPages = Math.ceil(totalItems / itemsPerPage); // 總頁數
     
     const dropdownRef = useRef(null);// 用於追蹤下拉選單的容器
     
@@ -42,6 +42,19 @@ const artworkEntrustLobby = () => {
         setCurrentPage(page);
     };
     useEffect(() => {
+            //設定每種螢幕大小顯示的商品數目
+            const updateItemsPerPage = () => {
+                if (window.innerWidth < 768) {
+                    setItemsPerPage(5); // Set to 10 items for smaller screens
+                } else {
+                    setItemsPerPage(8); // Default to 16 items for larger screens
+                }
+            };
+            // Initial check
+            updateItemsPerPage(); 
+            // Add event listener for window resize
+            window.addEventListener("resize", updateItemsPerPage);
+
             const handleClickOutside = (event) => {
                 if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
                     setOpenDropdown(null);
@@ -55,8 +68,8 @@ const artworkEntrustLobby = () => {
         }, []);
     
         const currentItems = Array.from({ length: totalItems }).slice(
-            (currentPage - 1) * ITEMSPERPAGE,
-            currentPage * ITEMSPERPAGE
+            (currentPage - 1) * itemsPerPage,
+            currentPage * itemsPerPage
         );
 
         
