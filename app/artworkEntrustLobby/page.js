@@ -7,7 +7,7 @@ import ArtworkEntrustCard from '@/components/ArtworkEntrustCard/ArtworkEntrustCa
 import Pagination from '@/components/Pagination/Pagination.jsx';
 import "./artworkEntrustLobby.css";
 
-const artworkEntrustLobby = () => {
+const ArtworkEntrustLobby = () => {
     const [openDropdown, setOpenDropdown] = useState(null);
     const [selectedOptions, setSelectedOptions] = useState({
         criteria: "最新發布",
@@ -45,9 +45,9 @@ const artworkEntrustLobby = () => {
             //設定每種螢幕大小顯示的商品數目
             const updateItemsPerPage = () => {
                 if (window.innerWidth < 768) {
-                    setItemsPerPage(5); // Set to 10 items for smaller screens
+                    setItemsPerPage(5); // Set to 5 items for smaller screens
                 } else {
-                    setItemsPerPage(8); // Default to 16 items for larger screens
+                    setItemsPerPage(8); // Default to 8 items for larger screens
                 }
             };
             // Initial check
@@ -144,4 +144,4 @@ const artworkEntrustLobby = () => {
 
     
 
-export default artworkEntrustLobby;
+export default ArtworkEntrustLobby;
