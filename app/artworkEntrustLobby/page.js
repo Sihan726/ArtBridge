@@ -19,7 +19,7 @@ const artworkEntrustLobby = () => {
     });
    
     const [currentPage, setCurrentPage] = useState(1); // 目前頁數
-    const ITEMSPERPAGE = 10; // 每頁顯示的商品數量
+    const ITEMSPERPAGE = 8; // 每頁顯示的商品數量
     const totalItems = 135; // 商品總數（可以從API獲取）
     const totalPages = Math.ceil(totalItems / ITEMSPERPAGE); // 總頁數
     
